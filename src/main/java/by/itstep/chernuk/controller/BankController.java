@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.Map;
@@ -27,11 +28,26 @@ public class BankController {
     @GetMapping
     public String listOfBank(
             Model model,
+            @RequestParam(required = false, defaultValue = "") Bank remove,
+            @RequestParam (required = true, defaultValue = "") Bank reaper,
             @PageableDefault(sort = {"id"}, direction = Sort.Direction.ASC)Pageable pageable
     ){
         Page<Bank> page = bankService.getAll(pageable);
         model.addAttribute("url", "/bank");
         model.addAttribute("page", page);
+
+        /*
+        Remove exists bank
+         */
+        if (remove != null){
+            bankService.remove(remove);
+        }
+        /*
+        Reaper exists bank
+         */
+        if (reaper != null) {
+            bankService.reaper(reaper);
+        }
 
         return "bank";
     }

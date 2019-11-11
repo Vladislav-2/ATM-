@@ -37,17 +37,11 @@
          <#if bankUser.deleted??>
                 <td>${bankUser.deleted?then("true","false")}</td></#if>
 
-     <#--<td>${bank.isBlocked()?then(-->
-     <#--'<a href="bank?unBlock=${bank.id}"  class="btn btn-outline-warning">block</a>',-->
-     <#--'<a href="bank?block=${bank.id}"  class="btn btn-outline-warning">block</a>')-->
-     <#--}-->
-     <#--</td>-->
-
-     <#--<td>${bank.deleted?then(-->
-     <#--'<a href="bank?reaper=${bank.id}"  class="btn btn-outline-danger">reaper</a>',-->
-     <#--'<a href="bank?remove=${bank.id}"  class="btn btn-outline-danger">remove</a>')-->
-     <#--}-->
-     <#--</td>-->
+     <td>${bankUser.deleted?then(
+     '<a href="bankUser?reaper=${bankUser.id}"  class="btn btn-outline-danger">reaper</a>',
+     '<a href="bankUser?remove=${bankUser.id}"  class="btn btn-outline-danger">remove</a>')
+     }
+     </td>
 
 
      </tr>

@@ -81,6 +81,16 @@ public class ATMService {
         }
     }
 
+    public void remove(ATM removeATM){
+        removeATM.setDeleted(true);
+        atmRepo.save(removeATM);
+    }
+
+    public void reaper(ATM reaperATM){
+        reaperATM.setDeleted(false);
+        atmRepo.save(reaperATM);
+    }
+
     public void reload(ATM atm){
         atm.setCash(atm.getMaxCash());
     }

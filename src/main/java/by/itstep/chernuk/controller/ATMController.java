@@ -15,6 +15,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 import java.util.Map;
@@ -29,11 +30,26 @@ public class ATMController {
     @GetMapping
     public String listOfATM(
             Model model,
+            @RequestParam(required = false, defaultValue = "") ATM remove,
+            @RequestParam (required = true, defaultValue = "") ATM reaper,
             @PageableDefault(sort = {"id"}, direction = Sort.Direction.ASC) Pageable pageable
     ){
         Page<ATM> page = atmService.getAll(pageable);
         model.addAttribute("url", "/atm");
         model.addAttribute("page", page);
+
+        /*
+        Remove exists atm
+         */
+        if (remove != null){
+            atmService.remove(remove);
+        }
+        /*
+        Reaper exists atm
+         */
+        if (reaper != null) {
+            atmService.reaper(reaper);
+        }
 
         return "atm";
     }

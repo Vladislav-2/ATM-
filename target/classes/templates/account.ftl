@@ -23,13 +23,13 @@
      <tr>
             <#if account.id??>
                 <th scope="row">${account.id}</th></#if>
-            <#if account.bankId??>
-                <td>${account.bankId}</td></#if>
-            <#if account.bankCardId??>
-                <td>${account.bankCardId}</td></#if>
-         <#if account.bankUserId??>
-                <td>${account.bankUserId}</td></#if>
-         <#if account.balance??>
+            <#if account.bank??>
+                <td>${account.bank.id}</td></#if>
+            <#if account.bankCard??>
+                <td>${account.bankCard.id}</td></#if>
+            <#if account.bankUser??>
+                <td>${account.bankUser.id}</td></#if>
+            <#if account.balance??>
                 <td>${account.balance}</td></#if>
             <#if account.deleted??>
                 <td>${account.deleted?then("true","false")}</td></#if>

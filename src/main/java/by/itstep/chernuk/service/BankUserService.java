@@ -37,6 +37,16 @@ public class BankUserService {
         }
     }
 
+    public void remove(BankUser removeBankUser){
+        removeBankUser.setDeleted(true);
+        bankUserRepo.save(removeBankUser);
+    }
+
+    public void reaper(BankUser reaperBankUser) {
+        reaperBankUser.setDeleted(false);
+        bankUserRepo.save(reaperBankUser);
+    }
+
     public Page<BankUser> getAll(Pageable pageable){
         return  bankUserRepo.findAll(pageable);
     }
