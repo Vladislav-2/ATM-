@@ -1,6 +1,9 @@
 package by.itstep.chernuk.domain;
 
 import by.itstep.chernuk.domain.AbstractClasses.AbstractEntity;
+import by.itstep.chernuk.repository.BankRepo;
+import by.itstep.chernuk.repository.BankUserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

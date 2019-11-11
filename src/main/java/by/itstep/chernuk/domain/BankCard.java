@@ -29,7 +29,6 @@ public class BankCard extends AbstractEntity {
     @Column(updatable = false)
     private Date usageTime;
 
-    @NotNull
     @OneToOne
     private BankAccount bankAccount;
 

@@ -12,9 +12,8 @@
         <th scope="col">CardNumber</th>
         <#--<th scope="col">CreatedDate</th>-->
         <#--<th scope="col">UpdatedDate</th>-->
-        <th scope="col">BankAccountId</th>
+        <#--<th scope="col">BankAccountId</th>-->
         <th scope="col">UsageTime</th>
-        <th scope="col">Cash</th>
         <th scope="col">isBlocked</th>
         <th scope="col">is Deleted</th>
         <th scope="col">To Block</th>
@@ -35,12 +34,12 @@
                 <#--<td>${card.createdDate}</td></#if>-->
             <#--<#if card.updatedDate??>-->
                 <#--<td>${card.updatedDate}</td></#if>-->
-            <#if card.bankAccountId??>
-                <td>${card.bankAccountId}</td></#if>
+            <#--<#if card.bankAccountId??>-->
+                <#--<td>${card.bankAccountId}</td></#if>-->
             <#if card.usageTime??>
                 <td>${card.usageTime}</td></#if>
-            <#if card.cash??>
-                <td>${card.cash}</td></#if>
+            <#--<#if card.cash??>-->
+                <#--<td>${card.cash}</td></#if>-->
             <#if card.isBlocked??>
                 <td>${card.isBlockedString()}</td></#if>
             <#if card.deleted??>
@@ -107,16 +106,16 @@
                 </div>
             </#if>
         </div>
-        <div class="form-group">
-            <input type="number" name="bankAccountId"
-                   class="form-control ${(bankAccountIdError??)?string('is-invalid', '')}"
-                   value="" placeholder="Enter the id of bank account">
-            <#if bankAccountIdError??>
-                <div class="invalid-feedback">
-                    ${bankAccountIdError}
-                </div>
-            </#if>
-        </div>
+        <#--<div class="form-group">-->
+            <#--<input type="number" name="bankAccountId"-->
+                   <#--class="form-control ${(bankAccountIdError??)?string('is-invalid', '')}"-->
+                   <#--value="" placeholder="Enter the id of bank account">-->
+            <#--<#if bankAccountIdError??>-->
+                <#--<div class="invalid-feedback">-->
+                    <#--${bankAccountIdError}-->
+                <#--</div>-->
+            <#--</#if>-->
+        <#--</div>-->
         <div class="form-group">
             <input type="date" name="usageTime"
                    class="form-control ${(usageTimeError??)?string('is-invalid', '')}"

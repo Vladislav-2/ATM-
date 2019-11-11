@@ -18,9 +18,7 @@ public class BankCardService {
                 && bankCardRepo.findByCardNumder(bankCard.getCardNumder()) == null
                 && bankCard.getCardNumder() != null
                 && bankCard.getPin() != null
-                && bankCard.getCardUser() != null
-                && bankCard.getUsageTime() != null
-                && bankCard.getBankAccountId() != null){
+                && bankCard.getUsageTime() != null){
             bankCardRepo.save(bankCard);
             return true;
         } else {

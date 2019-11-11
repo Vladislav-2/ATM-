@@ -14,7 +14,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ATB" options="-parameters" />
-      <module name="ATM" options="-parameters" />
+      <module name="ATM" options="" />
     </option>
   </component>
 </project>
